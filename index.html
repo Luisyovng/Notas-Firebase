@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notas y Promedio - Firebase Realtime DB</title>
+    <link href="estilocss/styles.css" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- Firebase SDK -->
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Registro de Notas</h1>
+        <form id="notaForm">
+            <input type="text" id="asignatura" placeholder="Nombre de la Asignatura" required>
+            <input type="number" id="nota1" placeholder="Nota 1" required min="0" max="10">
+            <input type="number" id="nota2" placeholder="Nota 2" required min="0" max="10">
+            <input type="number" id="nota3" placeholder="Nota 3" required min="0" max="10">
+            <input type="text" id="nombre" placeholder="Nombre del Estudiante" required>
+            <button type="submit">Guardar</button>
+            <button type="button" id="limpiarBtn">Limpiar Tabla</button>
+
+        </form>
+        <p id="resultado"></p>
+
+        <h2>Historial</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nota 1</th>
+                    <th>Nota 2</th>
+                    <th>Nota 3</th>
+                    <th>Promedio</th>
+                    <th>Fecha</th>
+                </tr>
+            </thead>
+            <tbody id="tablaNotas"></tbody>
+        </table>
+    </div>
+
+    <script type="module" src="js/script.js"></script>
+</body>
+</html>
